@@ -21,9 +21,9 @@ ol, li {
 /** ======= ACTUAL STYLES ====== **/
 body {
   padding-top: min(20vh, 24rem);
+  display: grid;
 }
-
-h1 {
+body > h1 {
   text-align: center;
   color: royalblue;
 }
