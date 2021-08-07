@@ -1,5 +1,5 @@
 {
-  "name": "templateproject",
+  "name": "mygithubwebpage",
   "version": "1.0.0",
   "description": "Template for my project",
   "main": "index.js",
@@ -19,5 +19,14 @@
     "gulp-sourcemaps": "^3.0.0",
     "postcss": "^8.3.6",
     "sass": "^1.37.5"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anhvu2001ct/anhvu2001ct.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anhvu2001ct/anhvu2001ct.github.io/issues"
+  },
+  "homepage": "https://github.com/anhvu2001ct/anhvu2001ct.github.io#readme"
 }
