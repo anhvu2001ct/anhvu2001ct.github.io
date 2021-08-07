@@ -4,15 +4,24 @@ const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
 const rename = require('gulp-rename');
 const prefix = require('autoprefixer');
+const fileinclude = require('gulp-file-include');
 const browserSync = require('browser-sync').create();
 
 const project = "WED201c";
 const srcPath = `src/${project}/`;
-const distPath = `dist/${project}/`;
+const distPath = (project == "index") ? "dist/" : `project/${project}/`;
 
 function allFiles(dir, ext, extFolder=true) {
   if (!extFolder) return `${dir}**/*.${ext}`;
   return `${dir}${ext}/**/*.${ext}`
+}
+
+function createPages() {
+  return gulp.src([
+      allFiles(srcPath, "html"),
+      allFiles(`!${srcPath}html/components`, "html", false)
+  ]).pipe(fileinclude())
+    .pipe(gulp.dest(distPath));
 }
 
 function styling() {
@@ -26,13 +35,25 @@ function styling() {
     .pipe(browserSync.stream());
 }
 
+async function create() {
+  require('del')(distPath+"**");
+  createPages();
+  styling();
+}
+
 function watch() {
+  create();
   browserSync.init({
     server: {baseDir: distPath}
   });
   gulp.watch(allFiles(srcPath, "scss"), styling);
-  gulp.watch([allFiles(distPath, "html", false), allFiles(distPath, "js")]).on("change", browserSync.reload);
+  gulp.watch([allFiles(srcPath, "html"), allFiles(srcPath, "js")]).on("change", () => {
+    createPages();
+    browserSync.reload();
+  });
 }
 
+exports.markup = createPages;
 exports.style = styling;
+exports.create = create;
 exports.watch = watch;
