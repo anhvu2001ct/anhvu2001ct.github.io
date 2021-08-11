@@ -8,9 +8,78 @@
   <title>Project for WED201c</title>
 </head>
 <body>
-  <h1>My very first webpage</h1>
-
-  <!-- Footer -->
-  @@include('components/footer.html')
+  <nav class="nav">
+    <a href="#home" class="nav__brand">
+      <span class="nav-brand__logo"></span>
+      <span class="nav-brand__name">Gourmet au Catering</span>
+    </a>
+    <div class="nav__navigator">
+      <a href="#about" class="nav-navigator__link">About</a>
+      <a href="#menu" class="nav-navigator__link">Menu</a>
+      <a href="#contact" class="nav-navigator__link">Contact</a>
+    </div>
+  </nav>
+  <header class="header" id="home">
+    <img class="header__image" src="https://www.w3schools.com/w3images/hamburger.jpg" alt="Hamburger Catering">
+    <h1 class="header__text">Le Catering</h1>
+  </header>
+  <div class="main-content">
+    <section class="section" id="about">
+      <img class="column" src="https://www.w3schools.com/w3images/tablesetting2.jpg" alt="Table Setting">
+      <div class="column">
+        <h2 class="title">About Catering</h2>
+        <h3 class="sub-title">Tradition since 1889</h3>
+        <p class="text">
+          The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.We only use
+          <span class="quote">seasonal</span>
+          ingredients.
+        </p>
+        <p class="text text-sub text-grey">
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </section>
+    <section class="section" id="menu">
+      <div class="column">
+        <h2 class="title">Our Menu</h2>
+        <div class="mt-4">
+          <h3 class="item__title">Bread Basket</h3>
+          <p class="item__detail text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p>
+        </div>
+        <div class="mt-4">
+          <h3 class="item__title">Honey Almond Granola with Fruits</h3>
+          <p class="item__detail text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p>
+        </div>
+        <div class="mt-4">
+          <h3 class="item__title">Belgian Waffle</h3>
+          <p class="item__detail text-grey">Vanilla flavored batter with malted flour 7.50</p>
+        </div>
+        <div class="mt-4">
+          <h3 class="item__title">Scrambled eggs</h3>
+          <p class="item__detail text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p>
+        </div>
+        <div class="mt-4">
+          <h3 class="item__title">Blueberry Pancakes</h3>
+          <p class="item__detail text-grey">With syrup, butter and lots of berries 8.50</p>
+        </div>
+      </div>
+      <img class="column" src="https://www.w3schools.com/w3images/tablesetting.jpg" alt="Menu">
+    </section>
+    <section class="section" id="contact">
+      <div class="column">
+        <h2 class="title" style="text-align:left">Contact</h2>
+        <p class="item__detail mt-4 line-height-sm">We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
+        <p class="item__title text-address">Catering Service, 42nd Living St, 43043 New York, NY</p>
+        <p class="item__detail line-height-sm">You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
+        <form class="form mt-2">
+          <input type="text" placeholder="Name" name="name" id="name">
+          <input type="number" placeholder="How many people" name="count" id="count">
+          <input type="datetime" placeholder="Date and time" name="time" id="time">
+          <input type="text" placeholder="Message \ Special requirements" name="mess" id="mess">
+          <button>SEND MESSAGE</button>
+        </form>
+      </div>
+    </section>
+  </div>
 </body>
 </html>

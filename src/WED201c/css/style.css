@@ -1,16 +1,20 @@
-/** ======= GENERAL STYLES ====== **/
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-ol, li {
+ol,
+li {
   list-style: none;
 }
 
@@ -18,12 +22,187 @@ ol, li {
   outline: 0.5rem dashed peru;
 }
 
-/** ======= ACTUAL STYLES ====== **/
-body {
-  padding-top: min(20vh, 24rem);
-  display: grid;
+.nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  padding: 0.8rem 1.6rem;
+  box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.12);
+  background-color: white;
+  color: black;
+  z-index: 1;
 }
-body > h1 {
+.nav a:hover, .nav a:focus {
+  background-color: #cccccc;
+}
+.nav a:link, .nav a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.nav__brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem 1.6rem;
   text-align: center;
-  color: royalblue;
+}
+
+.nav-brand__name {
+  font-family: "Times New Roman";
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+}
+
+.nav__navigator {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .nav__navigator {
+    display: none;
+  }
+}
+
+.nav-navigator__link {
+  font-family: "Times New Roman";
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  padding: 0.8rem 1.6rem;
+  text-decoration: none;
+}
+
+.header {
+  position: relative;
+  max-width: 160rem;
+  min-width: 50rem;
+  margin: 0 auto;
+}
+
+.header__image {
+  max-width: 100%;
+}
+
+.header__text {
+  position: absolute;
+  left: clamp(1rem, 5vw, 4rem);
+  bottom: clamp(1rem, 5vw, 4rem);
+  font-size: 3.6rem;
+  font-family: "Playfair Display", sans-serif;
+  letter-spacing: 5px;
+  opacity: 0.6;
+}
+
+.section {
+  display: flex;
+  gap: 4rem;
+  margin-top: 10rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.section img {
+  opacity: 0.75;
+}
+@media (max-width: 600px) {
+  .section {
+    flex-wrap: wrap;
+  }
+}
+
+.column {
+  width: 100%;
+}
+
+.title {
+  font-family: "Playfair Display", "Times New Roman";
+  letter-spacing: 0.5rem;
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+.sub-title {
+  letter-spacing: 0.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: normal;
+  padding: 1rem 0;
+  margin-top: 4rem;
+}
+
+.text {
+  padding: 1.8rem 0;
+  line-height: 2.7rem;
+  font-size: 1.8rem;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .text-sub {
+    display: none;
+  }
+}
+
+.quote {
+  padding: 0 0.8rem;
+  background-color: #f1f1f1;
+}
+
+.item__title {
+  font-size: 2rem;
+  padding: 1rem 0;
+  font-weight: normal;
+  letter-spacing: 0.5rem;
+}
+
+.item__detail {
+  font-size: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.line-height-sm {
+  line-height: 1.5;
+}
+
+.form > input {
+  display: block;
+  width: 100%;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.35);
+}
+.form > button {
+  padding: 0.8rem 1.6rem;
+  background-color: #eee;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-left: 0.8rem;
+  font-family: "Times New Roman", Times, serif;
+}
+.form > button:hover {
+  background-color: #bbbbbb;
+}
+
+.main-content {
+  font-family: "Times New Roman", Times, serif;
+  max-width: 110rem;
+  margin: 0 auto;
+}
+
+.text-grey {
+  color: #757575;
+}
+
+.text-address {
+  color: #607d8b;
+  font-weight: bolder;
+  letter-spacing: normal;
 }

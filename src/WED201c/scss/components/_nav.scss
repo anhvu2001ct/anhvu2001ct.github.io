@@ -1,0 +1,62 @@
+@use "sass:color";
+
+$hover-color: color.adjust(white, $lightness: -20%);
+
+$padding: 0.8rem 1.6rem;
+
+.nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  padding: $padding;
+  box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.12);
+  background-color: white;
+  color: black;
+  z-index: 1;
+
+  a {
+    &:hover,
+    &:focus {
+      background-color: $hover-color;
+    }
+
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+.nav__brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $padding;
+  text-align: center;
+}
+
+.nav-brand__name {
+  font-family: "Times New Roman";
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+}
+
+.nav__navigator {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.nav-navigator__link {
+  font-family: "Times New Roman";
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  padding: $padding;
+  text-decoration: none;
+}

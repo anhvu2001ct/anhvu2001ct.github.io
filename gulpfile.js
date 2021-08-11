@@ -6,10 +6,9 @@ const prefix = require('autoprefixer');
 const fileinclude = require('gulp-file-include');
 const browserSync = require('browser-sync').create();
 
-const project = "index";
+const project = "WED201c";
 const srcPath = `src/${project}/`;
 const distPath = "dist/" + (project == "index" ? "index/" : `project/${project}/`);
-console.log(distPath)
 
 function allFiles(dir, ext, extFolder=true) {
   if (!extFolder) return `${dir}**/*.${ext}`;

@@ -1,29 +1,30 @@
-/** ======= GENERAL STYLES ====== **/
-html {
-  font-size: 62.5%;
+//-- Load external import --//
+@use "abstracts/import";
+
+//-- Load utilities --//
+@use "abstracts";
+
+//-- Reset layout --//
+@use "components/reset";
+
+//-- Add components --//
+@use "components/nav";
+@use "components/header";
+@use "components/section";
+
+//-- More styling --//@at-root
+.main-content {
+  font-family: "Times New Roman", Times, serif;
+  max-width: 110rem;
+  margin: 0 auto;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
+.text-grey {
+  color: abstracts.$grey;
 }
 
-ol, li {
-  list-style: none;
-}
-
-.debug {
-  outline: .5rem dashed peru;
-}
-
-/** ======= ACTUAL STYLES ====== **/
-body {
-  padding-top: min(20vh, 24rem);
-  display: grid;
-  > h1 {
-    text-align: center;
-    color: royalblue;
-  }
+.text-address {
+  color: abstracts.$color-address;
+  font-weight: bolder;
+  letter-spacing: normal;
 }

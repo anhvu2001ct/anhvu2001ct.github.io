@@ -1,0 +1,100 @@
+@use "sass:color";
+
+.section {
+  display: flex;
+  gap: 4rem;
+  margin-top: 10rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+  img {
+    opacity: 0.75;
+  }
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
+}
+
+.column {
+  width: 100%;
+}
+
+.title {
+  font-family: "Playfair Display", "Times New Roman";
+  letter-spacing: 0.5rem;
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+.sub-title {
+  letter-spacing: 0.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: normal;
+  padding: 1rem 0;
+  margin-top: 4rem;
+}
+
+.text {
+  padding: 1.8rem 0;
+  line-height: 2.7rem;
+  font-size: 1.8rem;
+}
+
+.text-sub {
+  @media (min-width: 600px) and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.quote {
+  padding: 0 0.8rem;
+  background-color: #f1f1f1;
+}
+
+.item__title {
+  font-size: 2rem;
+  padding: 1rem 0;
+  font-weight: normal;
+  letter-spacing: 0.5rem;
+}
+
+.item__detail {
+  font-size: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.line-height-sm {
+  line-height: 1.5;
+}
+
+.form {
+  > input {
+    display: block;
+    width: 100%;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgb(100, 100, 100, 0.35);
+  }
+
+  > button {
+    padding: 0.8rem 1.6rem;
+    background-color: #eee;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-left: 0.8rem;
+    font-family: "Times New Roman", Times, serif;
+    &:hover {
+      background-color: color.adjust(#eee, $lightness: -20%);
+    }
+  }
+}
