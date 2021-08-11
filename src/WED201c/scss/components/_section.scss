@@ -78,12 +78,30 @@
 }
 
 .form {
-  > input {
-    display: block;
-    width: 100%;
-    padding: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgb(100, 100, 100, 0.35);
+  $transition-duration: 0.3s;
+  > div {
+    position: relative;
+
+    > input {
+      display: block;
+      width: 100%;
+      padding: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgb(100, 100, 100, 0.35);
+      transition: $transition-duration;
+    }
+    &::before {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      box-shadow: 0 0 0.5rem blue;
+      opacity: 0;
+      transition: $transition-duration;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
   }
 
   > button {
@@ -93,6 +111,7 @@
     margin-top: 1rem;
     margin-left: 0.8rem;
     font-family: "Times New Roman", Times, serif;
+    transition: $transition-duration;
     &:hover {
       background-color: color.adjust(#eee, $lightness: -20%);
     }
