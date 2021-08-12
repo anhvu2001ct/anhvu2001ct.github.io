@@ -25,7 +25,7 @@
   </header>
   <div class="main-content">
     <section class="section" id="about">
-      <img class="column" src="https://www.w3schools.com/w3images/tablesetting2.jpg" alt="Table Setting">
+      <img loading="lazy" class="column" src="https://www.w3schools.com/w3images/tablesetting2.jpg" alt="Table Setting">
       <div class="column">
         <h2 class="title">About Catering</h2>
         <h3 class="sub-title">Tradition since 1889</h3>
@@ -63,7 +63,7 @@
           <p class="item__detail text-grey">With syrup, butter and lots of berries 8.50</p>
         </div>
       </div>
-      <img class="column" src="https://www.w3schools.com/w3images/tablesetting.jpg" alt="Menu">
+      <img loading="lazy" class="column" src="https://www.w3schools.com/w3images/tablesetting.jpg" alt="Menu">
     </section>
     <section class="section" id="contact">
       <div class="column">
@@ -71,9 +71,9 @@
         <p class="item__detail mt-4 line-height-sm">We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
         <p class="item__title text-address">Catering Service, 42nd Living St, 43043 New York, NY</p>
         <p class="item__detail line-height-sm">You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
-        <form class="form mt-2">
+        <form class="form mt-2" style="margin-bottom: 2rem">
           <div><input type="text" placeholder="Name" name="name" id="name" required></div>
-          <div><input type="number" placeholder="How many people" name="people" value="2" id="count" required></div>
+          <div><input type="number" placeholder="How many people" name="people" min="1" value="2" id="count" required></div>
           <div><input type="text" placeholder="Date and time" name="time" id="time" required></div>
           <div><input type="text" placeholder="Message \ Special requirements" name="mess" id="mess"></div>
           <button>SEND MESSAGE</button>
